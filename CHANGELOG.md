@@ -2,19 +2,4 @@
 
 ## 💻 Changes & Update
 
--   First commit of this repository
--   Add some global styles
-
-## 📦 Including Some Assets
-
-### CDN :
-
--   Font Awesome 5
--   Swiper 6
--   Google Font - Poppins
-
-### Images :
-
--   Favico
--   Favico 32x32
--   Favico 180x180
+-   Add Style for Spacing
