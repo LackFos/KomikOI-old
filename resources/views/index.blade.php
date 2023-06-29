@@ -22,7 +22,15 @@
 </head>
 
 <body>
+    @if ($hasHeader)
+        <x-header />
+    @endif
+
     @yield('page')
+
+    @if ($hasFooter)
+        <x-footer />
+    @endif
 </body>
 
 </html>
