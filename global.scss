@@ -26,6 +26,24 @@ li {
     list-style: none;
 }
 
+.line {
+    &-1 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow: hidden;
+    }
+
+    &-3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+    }
+}
+
 // Container
 .container {
     margin: auto;
@@ -78,6 +96,25 @@ li {
     @media (max-width: 640px) {
         .section {
             padding: 0 0.5rem;
+        }
+    }
+}
+
+.swiper-nav {
+    display: flex;
+    margin-left: auto;
+
+    &-button {
+        margin: 0 4px;
+        border-radius: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $surface-gray;
+
+        &:hover {
+            color: white !important;
+            background-color: $primary !important;
         }
     }
 }

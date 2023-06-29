@@ -34,4 +34,39 @@ li {
   margin-bottom: 3rem;
 }
 
+.header {
+  background-color: #111111;
+}
+.header .container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  color: #f8f8ff;
+  text-align: center;
+  background-color: #111111;
+}
+.footer .section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.footer .footer-link {
+  line-height: 50px;
+}
+@media (max-width: 1400px) {
+  .footer .section {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .footer .section {
+    padding: 0 0.5rem;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
