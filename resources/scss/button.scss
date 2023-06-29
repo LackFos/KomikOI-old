@@ -1,8 +1,5 @@
 @import "__variables";
-
-@mixin hover($color, $property) {
-    #{$property}: darken($color, 15%);
-}
+@import "__function";
 
 .button {
     cursor: pointer;
