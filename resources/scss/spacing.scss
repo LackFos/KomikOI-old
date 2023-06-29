@@ -1,0 +1,100 @@
+$spacing-values: (
+    "0": 0,
+    "1": 0.25,
+    "2": 0.5,
+    "3": 1,
+    "4": 1.5,
+    "5": 3,
+);
+
+@mixin single-direction($spacing, $property) {
+    @each $level, $value in $spacing {
+        &-#{$level} {
+            #{$property}: #{$value}#{"rem"} !important;
+        }
+    }
+
+    &-auto {
+        #{$property}: auto !important;
+    }
+}
+
+@mixin vertical-direction($spacing, $property) {
+    @each $level, $value in $spacing {
+        &-#{$level} {
+            #{$property}-top: #{$value}#{"rem"} !important;
+            #{$property}-bottom: #{$value}#{"rem"} !important;
+        }
+    }
+
+    &-auto {
+        #{$property}-top: auto !important;
+        #{$property}-bottom: auto !important;
+    }
+}
+
+@mixin horizontal-direction($spacing, $property) {
+    @each $level, $value in $spacing {
+        &-#{$level} {
+            #{$property}-left: #{$value}#{"rem"} !important;
+            #{$property}-right: #{$value}#{"rem"} !important;
+        }
+    }
+
+    &-auto {
+        #{$property}-left: auto !important;
+        #{$property}-right: auto !important;
+    }
+}
+
+.m {
+    @include single-direction($spacing-values, "margin");
+}
+
+.ml {
+    @include single-direction($spacing-values, "margin-left");
+}
+
+.mr {
+    @include single-direction($spacing-values, "margin-right");
+}
+
+.mb {
+    @include single-direction($spacing-values, "margin-bottom");
+}
+
+.mx {
+    @include horizontal-direction($spacing-values, "margin");
+}
+
+.my {
+    @include vertical-direction($spacing-values, "margin");
+}
+
+.p {
+    @include single-direction($spacing-values, "padding");
+}
+
+.pt {
+    @include single-direction($spacing-values, "padding-top");
+}
+
+.pl {
+    @include single-direction($spacing-values, "padding-left");
+}
+
+.pr {
+    @include single-direction($spacing-values, "padding-right");
+}
+
+.pb {
+    @include single-direction($spacing-values, "padding-bottom");
+}
+
+.px {
+    @include horizontal-direction($spacing-values, "padding");
+}
+
+.py {
+    @include vertical-direction($spacing-values, "padding");
+}

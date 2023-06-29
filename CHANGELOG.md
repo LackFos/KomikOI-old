@@ -2,5 +2,4 @@
 
 ## 💻 Changes & Update
 
--   Create Header and Footer Components
--   Add Style for both components
+-   Add Style for Spacing
