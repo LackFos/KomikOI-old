@@ -1,0 +1,38 @@
+<div id="slider-swiper" class="swiper swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="slider-bgimage" style="background-image: url({{ asset('/storage/yuan-zun.webp') }})"></div>
+
+            <div class="slider-poster">
+                <div class="slider-poster-placeholder">
+                    <img src="{{ asset('/storage/yuan-zun.webp') }}" alt="">
+                </div>
+            </div>
+
+            <div class="slider-detail">
+                <h2 class="slider-detail-title line-3">Yuan Zun</h2>
+
+                <p class="slider-detail-description line-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, enim
+                    est accusantium praesentium esse, veniam nesciunt eaque hic excepturi eligendi iste facilis animi.
+                    Impedit, labore!
+                </p>
+
+                <div class="slider-button">
+                    <a class="button primary" href="#">Baca Sekarang</a>
+                    <a href="#" class="button secondary">Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper-nav">
+        <div id="swiper-slider-prev" class="button swiper-nav-button button-action">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div id="swiper-slider-next" class="button swiper-nav-button button-action">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+</div>

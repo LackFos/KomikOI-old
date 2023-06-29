@@ -81,3 +81,22 @@ li {
         }
     }
 }
+
+.swiper-nav {
+    display: flex;
+    margin-left: auto;
+
+    &-button {
+        margin: 0 4px;
+        border-radius: 50px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $surface-gray;
+
+        &:hover {
+            color: white !important;
+            background-color: $primary !important;
+        }
+    }
+}

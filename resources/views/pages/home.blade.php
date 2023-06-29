@@ -1,5 +1,9 @@
 @extends('index')
 
 @section('page')
-    <h1>Home</h1>
+    <main class="container no-select">
+        <section class="section slider">
+            <x-slideshow />
+        </section>
+    </main>
 @endsection

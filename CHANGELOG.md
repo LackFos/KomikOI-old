@@ -2,4 +2,4 @@
 
 ## 💻 Changes & Update
 
--   Add Style for Spacing
+-   Create Slideshow component to show list of recommended komiks

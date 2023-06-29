@@ -69,4 +69,21 @@ li {
   }
 }
 
+.swiper-nav {
+  display: flex;
+  margin-left: auto;
+}
+.swiper-nav-button {
+  margin: 0 4px;
+  border-radius: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+}
+.swiper-nav-button:hover {
+  color: white !important;
+  background-color: #ff4a22 !important;
+}
+
 /*# sourceMappingURL=global.css.map */
