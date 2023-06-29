@@ -1,0 +1,60 @@
+.kontenx {
+    width: 100%;
+
+    &-top {
+        margin-bottom: 1rem;
+        width: 100%;
+        display: flex;
+    }
+
+    &-bottom {
+        position: relative;
+        min-height: 200px;
+
+        & .swiper-slide {
+            margin-right: 7px;
+            width: calc(100% / 8);
+        }
+
+        @media (max-width: 1400px) {
+            .swiper-slide {
+                width: calc(100% / 6);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .swiper-slide {
+                width: calc(100% / 4);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .swiper-slide {
+                width: calc(100% / 3);
+            }
+        }
+    }
+
+    &-poster {
+        &:hover {
+            color: var(--primary);
+        }
+
+        &-placeholder {
+            position: relative;
+            padding-top: 133%;
+            background: var(--surface-gray);
+
+            & img {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    &-title {
+        font-size: 1em;
+    }
+}

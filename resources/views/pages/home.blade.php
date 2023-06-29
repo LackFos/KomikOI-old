@@ -5,5 +5,9 @@
         <section class="section slider">
             <x-slideshow />
         </section>
+
+        <section class="section">
+            <x-kontenx heading="Terpopuler Hari Ini" swiper="anjay" />
+        </section>
     </main>
 @endsection
