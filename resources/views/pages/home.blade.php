@@ -13,5 +13,9 @@
         <section class="section">
             <x-genre-menu hasMoreButton=true />
         </section>
+
+        <section class="section">
+            <x-konteny heading="Update Terbaru" toPage="update-terbaru" />
+        </section>
     </main>
 @endsection

@@ -4,3 +4,5 @@
 
 -   Create Slideshow component to show list of recommended komiks
 -   Create KontenX component to show list of komiks horizontaly
+-   Create GenreMenu component to show list of genres available
+-   Create KontenY component to show list of komiks verticaly
