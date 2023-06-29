@@ -33,6 +33,18 @@ li {
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
+@media (max-width: 1400px) {
+  .container .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .container .section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
 
 .header {
   background-color: #111111;
@@ -55,18 +67,8 @@ li {
   display: flex;
   justify-content: center;
 }
-.footer .footer-link {
+.footer-link {
   line-height: 50px;
-}
-@media (max-width: 1400px) {
-  .footer .section {
-    padding: 0 1rem;
-  }
-}
-@media (max-width: 640px) {
-  .footer .section {
-    padding: 0 0.5rem;
-  }
 }
 
 .swiper-nav {

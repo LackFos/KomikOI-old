@@ -37,6 +37,16 @@ li {
         align-content: center;
         flex-wrap: wrap;
         margin-bottom: 3rem;
+
+        @media (max-width: 1400px) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
     }
 }
 
@@ -65,20 +75,8 @@ li {
         justify-content: center;
     }
 
-    .footer-link {
+    &-link {
         line-height: 50px;
-    }
-
-    @media (max-width: 1400px) {
-        .section {
-            padding: 0 1rem;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .section {
-            padding: 0 0.5rem;
-        }
     }
 }
 

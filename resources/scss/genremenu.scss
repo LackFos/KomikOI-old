@@ -65,13 +65,15 @@
 }
 
 .aktif {
-    .genre-menu:nth-of-type(n + 24) {
-        display: flex;
-    }
-
-    @media (max-width: 575px) {
-        .genre-menu:nth-of-type(n + 14) {
+    .genre-menu {
+        &:nth-of-type(n + 24) {
             display: flex;
+        }
+
+        @media (max-width: 575px) {
+            &:nth-of-type(n + 14) {
+                display: flex;
+            }
         }
     }
 

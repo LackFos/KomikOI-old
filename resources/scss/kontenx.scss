@@ -14,22 +14,16 @@
         & .swiper-slide {
             margin-right: 7px;
             width: calc(100% / 8);
-        }
 
-        @media (max-width: 1400px) {
-            .swiper-slide {
+            @media (max-width: 1400px) {
                 width: calc(100% / 6);
             }
-        }
 
-        @media (max-width: 992px) {
-            .swiper-slide {
+            @media (max-width: 992px) {
                 width: calc(100% / 4);
             }
-        }
 
-        @media (max-width: 768px) {
-            .swiper-slide {
+            @media (max-width: 768px) {
                 width: calc(100% / 3);
             }
         }
@@ -45,7 +39,7 @@
             padding-top: 133%;
             background: var(--surface-gray);
 
-            & img {
+            img {
                 position: absolute;
                 top: 0;
                 width: 100%;
