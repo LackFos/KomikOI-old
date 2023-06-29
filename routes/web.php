@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index')->with('metaTitle', 'KomikOI | Baca Komik Bahasa Indonesia');
+    return view('pages.home')->with('metaTitle', 'KomikOI | Baca Komik Bahasa Indonesia');
 });

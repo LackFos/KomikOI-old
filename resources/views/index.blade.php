@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    @yield('page')
 </body>
 
 </html>
