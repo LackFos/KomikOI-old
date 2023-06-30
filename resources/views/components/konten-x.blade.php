@@ -25,6 +25,15 @@
                     </a>
                 </div>
 
+                <div class="swiper-slide">
+                    <a href="/detail/im-godfather-in-another-world" class="kontenx-poster">
+                        <div class="kontenx-poster-placeholder">
+                            <img src="{{ asset('/storage/im-godfather-in-another-world.webp') }}" alt="">
+                        </div>
+                        <h3 class="kontenx-title line-3">Im Godfather in Another World</h3>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>

@@ -55,5 +55,47 @@
                 </ul>
             </div>
         </div>
+
+        <div class="konteny-card">
+            <a href="#" class="konteny-poster">
+                <img src={{ asset('storage/im-godfather-in-another-world.webp') }} alt="">
+            </a>
+
+            <div class="detail">
+                <h3 class="detail-title line-1">
+                    <a href="#">Im Godfather in Another World</a>
+                </h3>
+
+                <ul class="genre-list line-1">
+                    <li class="genre">
+                        <a href="#">Aksi</a>
+                    </li>
+                    <li class="genre">
+                        <a href="#">Fantasi</a>
+                    </li>
+                    <li class="genre">
+                        <a href="#">Misteri</a>
+                    </li>
+                </ul>
+
+                <ul class="chapter-list">
+                    <li class="chapter">
+                        <a href="#">
+                            Chapter 3
+                        </a>
+                    </li>
+                    <li class="chapter">
+                        <a href="#">
+                            Chapter 2
+                        </a>
+                    </li>
+                    <li class="chapter">
+                        <a href="#">
+                            Chapter 1
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
