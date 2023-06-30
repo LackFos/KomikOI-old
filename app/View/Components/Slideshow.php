@@ -8,8 +8,11 @@ use Illuminate\Contracts\View\View;
 
 class Slideshow extends Component
 {
-
+    /**
+     * @param string $swiper, Unique class for swiper selector.
+     */
     public function __construct(
+        public string $swiper,
     ) {
     }
 

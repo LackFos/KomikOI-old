@@ -1,4 +1,4 @@
-<div id="slider-swiper" class="swiper swiper-container">
+<div id="{{ $swiper }}" class="swiper swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="slider-bgimage" style="background-image: url({{ asset('/storage/yuan-zun.webp') }})"></div>
@@ -27,10 +27,10 @@
     </div>
 
     <div class="swiper-nav">
-        <div id="swiper-slider-prev" class="button swiper-nav-button button-action">
+        <div id="{{ $swiper }}-prev" class="button swiper-nav-button button-action">
             <i class="fas fa-chevron-left"></i>
         </div>
-        <div id="swiper-slider-next" class="button swiper-nav-button button-action">
+        <div id="{{ $swiper }}-next" class="button swiper-nav-button button-action">
             <i class="fas fa-chevron-right"></i>
         </div>
     </div>
