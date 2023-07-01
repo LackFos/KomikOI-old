@@ -54,6 +54,9 @@ li {
   display: flex;
   align-items: center;
 }
+.header .container .section {
+  margin-bottom: 0;
+}
 
 .footer {
   display: flex;

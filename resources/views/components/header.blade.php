@@ -1,5 +1,7 @@
 <header class="header">
     <div class="container">
-        <x-site-logo />
+        <div class="section">
+            <x-site-logo />
+        </div>
     </div>
 </header>
