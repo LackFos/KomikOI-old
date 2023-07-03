@@ -17,8 +17,8 @@ return new class extends Migration {
             $table->string('author')->nullable();
             $table->string('image');
             $table->text('description');
-            $table->foreignId('status_id')->constrained()->onUpdate('cascade');
-            $table->foreignId('type_id')->constrained()->onUpdate('cascade');
+            $table->foreignId('status_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('type_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }

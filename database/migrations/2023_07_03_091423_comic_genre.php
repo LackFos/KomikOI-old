@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('comic_genre', function (Blueprint $table) {
             $table->id();
             $table->foreignId('comic_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('genre_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('genre_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
