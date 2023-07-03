@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ComicSeeder::class);
         $this->call(ChapterSeeder::class);
         $this->call(ChapterImageSeeder::class);
+        $this->call(RecommendedComicSeeder::class);
     }
 }
