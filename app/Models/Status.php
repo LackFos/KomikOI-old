@@ -10,4 +10,8 @@ class Status extends Model
     use HasFactory;
     public $timestamps = false;
 
+    public function comics()
+    {
+        return $this->hasMany(Comic::class);
+    }
 }

@@ -12,7 +12,7 @@ class ComicSeeder extends Seeder
      */
     public function run(): void
     {
-        $Comic = Comic::create([
+        $comic = Comic::create([
             'title' => 'Yuan Zun',
             'slug' => 'yuan-zun',
             'image' => '/storage/Comics/yuan-zun/thumbnail.webp',
@@ -20,8 +20,9 @@ class ComicSeeder extends Seeder
             'type_id' => 2,
             'status_id' => 1,
         ]);
+        $comic->genres()->sync([1, 2]);
 
-        $Comic = Comic::create([
+        $comic = Comic::create([
             'title' => 'I\'m Godfather in Another World',
             'slug' => 'im-godfather-in-another-world',
             'image' => '/storage/Comics/im-godfather-in-another-world/thumbnail.webp',
@@ -29,5 +30,6 @@ class ComicSeeder extends Seeder
             'type_id' => 2,
             'status_id' => 1,
         ]);
+        $comic->genres()->sync([1, 2]);
     }
 }
