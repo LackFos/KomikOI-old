@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Type;
-use App\Models\Status;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Staudenmeir\EloquentEagerLimit\HasEagerLimit;
@@ -33,11 +31,18 @@ class Comic extends Model
         return $this->hasMany(Chapter::class);
     }
 
-    public function chapterPertama()
+    public function firstChapter()
     {
         return $this->hasOne(Chapter::class)
             ->select('comic_id', DB::raw('MIN(slug) as slug'))
             ->groupBy('comic_id');
     }
 
+    public function latestChapter()
+    {
+        return $this->hasMany(Chapter::class)
+            ->select('comic_id', 'number', 'slug')
+            ->orderByDesc('number')
+            ->limit(3);
+    }
 }

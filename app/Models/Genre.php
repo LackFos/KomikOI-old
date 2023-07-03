@@ -14,4 +14,9 @@ class Genre extends Model
     {
         return $this->belongsToMany(Comic::class);
     }
+
+    public static function getGenres()
+    {
+        return self::select(['name', 'slug'])->get();
+    }
 }
