@@ -10,10 +10,12 @@ use Illuminate\Database\Eloquent\Collection;
 class KontenX extends Component
 {
     /**
+     * @param Collection $comics, List of comics will be shown.
      * @param string $heading, Title of the KontenX.
      * @param string $swiper, Unique class for swiper selector.
      */
     public function __construct(
+        public Collection $comics,
         public string $swiper,
         public string $heading
     ) {

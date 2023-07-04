@@ -12,10 +12,11 @@
     & .swiper {
         position: absolute;
         inset: 0;
-        background-color: $surface-gray;
     }
 
     & .swiper-slide {
+        background-color: $surface-gray;
+
         @media (max-width: 640px) {
             height: 200px;
         }

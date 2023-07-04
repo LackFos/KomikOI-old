@@ -30,7 +30,7 @@
         cursor: default;
         pointer-events: none;
         transform: none;
-        color: $button-disabled;
+        color: hover($button-disabled);
         background-color: $button-disabled;
         opacity: 0.7;
     }

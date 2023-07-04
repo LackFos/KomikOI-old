@@ -14,88 +14,38 @@
     </div>
 
     <div class="konteny-bawah">
-        <div class="konteny-card">
-            <a href="#" class="konteny-poster">
-                <img src={{ asset('storage/yuan-zun.webp') }} alt="">
-            </a>
 
-            <div class="detail">
-                <h3 class="detail-title line-1">
-                    <a href="#">Yuan Zun</a>
-                </h3>
+        @foreach ($comics as $comic)
+            <div class="konteny-card">
+                <a href="/detail/{{ $comic->slug }}" class="konteny-poster">
+                    <img src={{ asset($comic->image) }} alt="Komik {{ $comic->title }}">
+                </a>
 
-                <ul class="genre-list line-1">
-                    <li class="genre">
-                        <a href="#">Aksi</a>
-                    </li>
-                    <li class="genre">
-                        <a href="#">Fantasi</a>
-                    </li>
-                    <li class="genre">
-                        <a href="#">Misteri</a>
-                    </li>
-                </ul>
+                <div class="detail">
+                    <h3 class="detail-title line-1">
+                        <a href="/detail/{{ $comic->slug }}">{{ $comic->title }}</a>
+                    </h3>
 
-                <ul class="chapter-list">
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 3
-                        </a>
-                    </li>
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 2
-                        </a>
-                    </li>
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 1
-                        </a>
-                    </li>
-                </ul>
+                    <ul class="genre-list line-1">
+                        @foreach ($comic->genres as $genre)
+                            <li class="genre">
+                                <a href="/genre/{{ $genre->slug }}">{{ $genre->name }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <ul class="chapter-list">
+                        @foreach ($comic->chapters as $chapter)
+                            <li class="chapter">
+                                <a href="/baca/{{ $chapter->slug }}">
+                                    Chapter {{ $chapter->number }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-        </div>
+        @endforeach
 
-        <div class="konteny-card">
-            <a href="#" class="konteny-poster">
-                <img src={{ asset('storage/im-godfather-in-another-world.webp') }} alt="">
-            </a>
-
-            <div class="detail">
-                <h3 class="detail-title line-1">
-                    <a href="#">Im Godfather in Another World</a>
-                </h3>
-
-                <ul class="genre-list line-1">
-                    <li class="genre">
-                        <a href="#">Aksi</a>
-                    </li>
-                    <li class="genre">
-                        <a href="#">Fantasi</a>
-                    </li>
-                    <li class="genre">
-                        <a href="#">Misteri</a>
-                    </li>
-                </ul>
-
-                <ul class="chapter-list">
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 3
-                        </a>
-                    </li>
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 2
-                        </a>
-                    </li>
-                    <li class="chapter">
-                        <a href="#">
-                            Chapter 1
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>

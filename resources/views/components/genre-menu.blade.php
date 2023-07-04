@@ -21,11 +21,13 @@
         </a>
     </li>
 
-    <li class="genre-menu">
-        <a href="/genre/aksi" class="genre-menu-button button gray">
-            Aksi
-        </a>
-    </li>
+    @foreach ($genres as $genre)
+        <li class="genre-menu">
+            <a href="/genre/{{ $genre->slug }}" class="genre-menu-button button gray">
+                {{ $genre->name }}
+            </a>
+        </li>
+    @endforeach
 
     @if ($hasMoreButton)
         <li class="genre-menu genre-button-more">
