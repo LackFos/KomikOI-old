@@ -22,6 +22,19 @@
 </head>
 
 <body>
+    @if ($hasHeader)
+        <x-header />
+    @endif
+
+    @yield('page')
+
+    @if ($hasFooter)
+        <x-footer />
+    @endif
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/jquery/3.6.4.js"><\/script>')
+</script>
 
 </html>

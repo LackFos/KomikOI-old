@@ -1,0 +1,87 @@
+@import "__variables";
+@import "__function";
+
+.button {
+    cursor: pointer;
+    padding: 0px 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    transition: 0.1s ease-in;
+
+    &:hover {
+        color: inherit;
+    }
+
+    &:active {
+        opacity: 1;
+        transform: scale(0.9);
+    }
+
+    &-action {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    &.disabled {
+        cursor: default;
+        pointer-events: none;
+        transform: none;
+        color: hover($button-disabled);
+        background-color: $button-disabled;
+        opacity: 0.7;
+    }
+
+    &.a {
+        background-color: $button-a;
+    }
+
+    &.a:hover {
+        @include hover($button-a, "background-color");
+    }
+
+    &.b {
+        background-color: $button-b;
+    }
+
+    &.b:hover {
+        @include hover($button-b, "background-color");
+    }
+
+    &.c {
+        background-color: $button-c;
+    }
+
+    &.c:hover {
+        @include hover($button-c, "background-color");
+    }
+
+    &.gray {
+        background-color: $button-gray;
+    }
+
+    &.gray:hover {
+        @include hover($button-gray, "background-color");
+    }
+
+    &.primary {
+        color: $font-white;
+        background-color: $primary;
+    }
+
+    &.primary:hover {
+        @include hover($primary, "background-color");
+    }
+
+    &.secondary {
+        color: $font-white;
+        background-color: $secondary;
+    }
+
+    &.secondary:hover {
+        @include hover($secondary, "background-color");
+    }
+}

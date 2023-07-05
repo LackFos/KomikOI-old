@@ -1,0 +1,108 @@
+@import "__variables";
+
+.konteny {
+    width: 100%;
+
+    &-atas {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    &-topage {
+        margin-left: auto;
+    }
+
+    &-bawah {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-card {
+        display: flex;
+        margin-bottom: 32px;
+        width: 100%;
+
+        @media (max-width: 480px) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-poster {
+        position: relative;
+        width: 150px;
+        height: 200px;
+        background-color: $surface-gray;
+
+        &:hover ~ .detail .detail-title {
+            color: $primary;
+        }
+
+        @media (max-width: 480px) {
+            width: 80px;
+            height: 120px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & .detail {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        width: calc(100% - 150px);
+
+        @media (max-width: 480px) {
+            width: calc(100% - 80px);
+        }
+
+        &-title {
+            margin-bottom: 8px;
+            font-size: 16px;
+
+            &:hover {
+                color: $primary;
+            }
+
+            @media (max-width: 480px) {
+                margin-bottom: 4px;
+            }
+        }
+
+        .genre-list {
+            font-size: 13px;
+
+            .genre {
+                display: inline;
+
+                &:not(:first-of-type)::before {
+                    content: ",";
+                    margin-left: -3px;
+                }
+            }
+        }
+
+        .chapter-list {
+            margin-top: auto;
+            font-size: 13px;
+            font-weight: 600;
+
+            .chapter {
+                padding: 10px 0;
+                border-bottom: 1px dashed #ddd;
+
+                @media (max-width: 480px) {
+                    padding: 8px 0;
+
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
