@@ -1,20 +1,11 @@
-# 0.0.0 (29-06-2023)
+# 0.1.0 (05-07-2023)
 
 ## 💻 Changes & Update
 
--   First commit of this repository
--   Add some global styles
+### Home Page is Available
 
-## 📦 Including Some Assets
-
-### CDN :
-
--   Font Awesome 5
--   Swiper 6
--   Google Font - Poppins
-
-### Images :
-
--   Favico
--   Favico 32x32
--   Favico 180x180
+-   Create Header & Footer Components
+-   Create Slideshow component to show list of recommended komiks
+-   Create KontenX component to show list of komiks horizontaly
+-   Create GenreMenu component to show list of genres available
+-   Create KontenY component to show list of komiks verticaly

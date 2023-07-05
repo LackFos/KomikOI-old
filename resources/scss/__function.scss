@@ -1,0 +1,3 @@
+@mixin hover($color, $property) {
+    #{$property}: darken($color, 15%);
+}
