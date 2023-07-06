@@ -51,6 +51,10 @@ $spacing-values: (
     @include single-direction($spacing-values, "margin");
 }
 
+.mt {
+    @include single-direction($spacing-values, "margin-top");
+}
+
 .ml {
     @include single-direction($spacing-values, "margin-left");
 }
