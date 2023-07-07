@@ -50,5 +50,9 @@
                 </div>
             </div>
         </section>
+
+        <section class="section detail-chapterbox">
+            <x-chapter-box />
+        </section>
     </main>
 @endsection
