@@ -11,7 +11,7 @@
         </section>
 
         <section class="section">
-            <x-genre-menu :genres="$genres" hasMoreButton=true />
+            <x-genre-menu :genres="$genres" hasCategory=true hasMoreButton=true />
         </section>
 
         <section class="section">

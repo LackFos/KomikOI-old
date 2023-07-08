@@ -10,4 +10,7 @@ switch(currentPage) {
 case 'home':
    import('./pages/home');
    break;
+case 'detail':
+   import('./pages/detail');
+   break;
 }
