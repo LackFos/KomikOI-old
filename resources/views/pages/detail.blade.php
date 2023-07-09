@@ -36,7 +36,7 @@
                 </div>
 
                 <div id="more-button" class="more-button">
-                    <i class="fas fa-chevron-down"></i>
+                    Lihat Detail <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </section>

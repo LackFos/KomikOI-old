@@ -93,7 +93,7 @@
 
         &-heading {
             font-size: 14px;
-            margin-right: 1rem;
+            margin-right: 0.75rem;
             white-space: nowrap;
         }
     }
@@ -176,6 +176,11 @@
 
                 &:hover {
                     border-left: 4px solid $primary;
+                }
+
+                & .release-date {
+                    font-size: 0.9em;
+                    font-weight: 500;
                 }
             }
         }
