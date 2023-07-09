@@ -8,7 +8,7 @@
             <li class="chapter">
                 <a href="/baca/{{ $chapter->slug }}" class="chapter-link" data-chapterNumber="{{ $chapter->number }}">
                     <span>Chapter {{ $chapter->number }}</span>
-                    <span>{{ $chapter->created_at->format('d/m/Y') }}</span>
+                    <span>{{ $chapter->created_at->diffForHumans() }}</span>
                 </a>
             </li>
         @endforeach

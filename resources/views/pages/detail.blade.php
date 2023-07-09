@@ -18,7 +18,7 @@
                             Baca Sekarang
                         </a>
 
-                        <div class="button secondary button-action">
+                        <div class="button secondary button-action" data-comic-id={{ $comic->id }}>
                             <i class="far fa-bookmark"></i>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     <x-detail-item heading="Tipe" text="{{ $type->name }}" toPage="/tipe/{{ $type->slug }}" />
                     <x-detail-item heading="Status" text="{{ $status->name }}" />
                     <x-detail-item heading="Author" text="{{ $author ?? '-' }}" />
-                    <x-detail-item heading="Dibaca" text="1.987 Kali" />
+                    <x-detail-item heading="Update Terakhir" text="{{ $lastUpdate }}" />
                 </div>
 
                 <div id="more-button" class="more-button">

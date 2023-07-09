@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\TimeAgoHelpers;
 use App\Models\Comic;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DetailController extends Controller
 {
@@ -14,6 +15,7 @@ class DetailController extends Controller
         $type = $comic->type()->select('name', 'slug')->first();
         $status = $comic->status()->select('name', 'slug')->first();
         $chapters = $comic->chapters()->select('slug', 'number', 'created_at')->get()->sortByDesc('number');
+        $lastUpdate = $chapters[0]->created_at->format('d M Y');
 
         return view(
             "pages.detail",
@@ -22,6 +24,7 @@ class DetailController extends Controller
                 'genres',
                 'type',
                 'status',
+                'lastUpdate',
                 'chapters'
             )
         )->with('metaTitle', 'Detail Page');
