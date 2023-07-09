@@ -11,10 +11,10 @@
 
             <div class="detail-info">
                 <div class="detail-info-general">
-                    <h1 class="detail-title mb-3">Komik Yuan Zun</h1>
+                    <h1 class="detail-title mb-3">Komik {{ $comic->title }}</h1>
 
                     <div class="detail-button">
-                        <a href="#" class="button primary">
+                        <a href="/baca/{{ $comic->firstChapter->slug }}" class="button primary">
                             Baca Sekarang
                         </a>
 
@@ -23,36 +23,26 @@
                         </div>
                     </div>
 
-                    <x-genre-menu :genres="collect([
-                        (object) ['name' => 'Aksi', 'slug' => 'aksi'],
-                        (object) ['name' => 'Fantasi', 'slug' => 'fantasi'],
-                        (object) ['name' => 'Kultivasi', 'slug' => 'kultivasi'],
-                    ])" />
+                    <x-genre-menu :genres="$genres" />
 
-                    <p class="detail-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus recusandae saepe nostrum ipsa,
-                        tenetur quidem. Quae adipisci vitae in harum ea aperiam iure, quisquam reprehenderit possimus. Ipsum
-                        voluptates porro quo alias nisi, enim inventore beatae sapiente voluptatum. Et in fuga a asperiores
-                        quibusdam amet ea tempore, quam quia qui totam?
-                    </p>
+                    <p class="detail-description">{{ $comic->description }}</p>
                 </div>
 
                 <div class="detail-info-misc">
-                    <x-detail-item heading="Tipe" text="Manhua" toPage="tipe/manhua" />
-                    <x-detail-item heading="Status" text="Ongoing" />
-                    <x-detail-item heading="Author" text="-" />
+                    <x-detail-item heading="Tipe" text="{{ $type->name }}" toPage="/tipe/{{ $type->slug }}" />
+                    <x-detail-item heading="Status" text="{{ $status->name }}" />
+                    <x-detail-item heading="Author" text="{{ $author ?? '-' }}" />
                     <x-detail-item heading="Dibaca" text="1.987 Kali" />
                 </div>
 
                 <div id="more-button" class="more-button">
-                    Lihat Semua
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
         </section>
 
         <section class="section detail-chapterbox">
-            <x-chapter-box />
+            <x-chapter-box :chapters="$chapters" />
         </section>
     </main>
 @endsection

@@ -3,17 +3,18 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 
 class ChapterBox extends Component
 {
     /**
-     * Create a new component instance.
+     * @param Collection $chapters, List of comics will be shown.
      */
-    public function __construct()
-    {
-        //
+    public function __construct(
+        public collection $chapters
+    ) {
     }
 
     /**
