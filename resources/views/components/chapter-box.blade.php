@@ -1,5 +1,11 @@
 <div class="chapterbox">
-    <h2 class="chapterbox-heading">Chapter Yuan Zun</h2>
+    <div class="chapterbox-top">
+        <h2 class="chapterbox-heading mt-2">Chapter Yuan Zun</h2>
+        <div class="sort mt-2">
+            Urutkan : <span id="sort-button">Terakhir</span>
+        </div>
+    </div>
+
     <input id="chapterbox-input" class="chapterbox-input" type="text" autocomplete=off
         placeholder="Masukkan Nomor Chapter" />
 

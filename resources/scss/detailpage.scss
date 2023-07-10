@@ -133,9 +133,27 @@
     font-weight: 700;
     width: 100%;
 
+    &-top {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+
+        .sort {
+            margin-left: auto;
+            font-weight: 400;
+        }
+
+        .sort span {
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            width: 62px;
+        }
+    }
+
     &-heading {
         font-size: 16px;
-        margin-bottom: 8px;
     }
 
     &-input {
@@ -158,6 +176,8 @@
         border-left: 1px solid #3c3c3c4a;
         border-radius: 0 0 8px 8px;
         border-right: 1px solid #3c3c3c4a;
+        display: flex;
+        flex-direction: column;
         max-height: 417px;
         min-height: 417px;
         overflow-y: auto;
@@ -185,6 +205,11 @@
             }
         }
     }
+}
+
+.reverse.chapterbox-list {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
 }
 
 .highlight.chapter-link {

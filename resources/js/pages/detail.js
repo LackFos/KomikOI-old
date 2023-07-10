@@ -4,6 +4,19 @@ $(document).ready(function () {
       $('.detail-info').toggleClass('active');
    });
 
+   $('#sort-button').click(function(e){
+      const $sortType = $(e.target);
+
+      $('.chapterbox-list').toggleClass('reverse');
+      if($sortType.text() == 'Terakhir') {
+         $sortType.text('Pertama');
+      } else {
+         $sortType.text('Terakhir');
+      }
+
+   
+   });
+
    // ChapterBox
    const $chapterInput = $('#chapterbox-input');
    const $chapterList = $('.chapterbox-list');
