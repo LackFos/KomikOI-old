@@ -125,8 +125,12 @@
     }
 }
 
-.active.detail-info .more-button i {
-    transform: rotate(180deg);
+.active.detail-info .more-button {
+    margin-top: 0.5rem;
+
+    i {
+        transform: rotate(180deg);
+    }
 }
 
 .chapterbox {
