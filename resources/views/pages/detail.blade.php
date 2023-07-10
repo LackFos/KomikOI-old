@@ -5,7 +5,7 @@
         <section class="section pt-4">
             <div class="detail-poster">
                 <div class="detail-poster-placeholder">
-                    <img src="{{ asset('/storage/comics/yuan-zun/thumbnail.webp') }}" alt="">
+                    <img src="{{ asset($comic->image) }}" alt="">
                 </div>
             </div>
 
@@ -14,7 +14,11 @@
                     <h1 class="detail-title mb-3">Komik {{ $comic->title }}</h1>
 
                     <div class="detail-button">
-                        <a href="/baca/{{ $comic->firstChapter->slug }}" class="button primary">
+                        <a href="/baca/{{ optional($comic->firstChapter)->slug }}" @class([
+                            'button',
+                            'primary' => $comic->firstChapter,
+                            'disabled' => !$comic->firstChapter,
+                        ])>
                             Baca Sekarang
                         </a>
 
@@ -32,7 +36,7 @@
                     <x-detail-item heading="Tipe" text="{{ $type->name }}" toPage="/tipe/{{ $type->slug }}" />
                     <x-detail-item heading="Status" text="{{ $status->name }}" />
                     <x-detail-item heading="Author" text="{{ $author ?? '-' }}" />
-                    <x-detail-item heading="Update Terakhir" text="{{ $lastUpdate }}" />
+                    <x-detail-item heading="Update Terakhir" text="{{ $lastUpdate ?? 'Belum ada Chapter' }}" />
                 </div>
 
                 <div id="more-button" class="more-button">
@@ -42,7 +46,7 @@
         </section>
 
         <section class="section detail-chapterbox">
-            <x-chapter-box :chapters="$chapters" />
+            <x-chapter-box :chapters="$chapters" :title="$comic->title" />
         </section>
     </main>
 @endsection

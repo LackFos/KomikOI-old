@@ -11,9 +11,11 @@ class ChapterBox extends Component
 {
     /**
      * @param Collection $chapters, List of comics will be shown.
+     * @param string $title, comic title will be shown.
      */
     public function __construct(
-        public collection $chapters
+        public collection $chapters,
+        public string $title
     ) {
     }
 

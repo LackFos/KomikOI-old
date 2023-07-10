@@ -1,6 +1,6 @@
 <div class="chapterbox">
     <div class="chapterbox-top">
-        <h2 class="chapterbox-heading mt-2">Chapter Yuan Zun</h2>
+        <h2 class="chapterbox-heading mt-2">Chapter {{ $title }}</h2>
         <div class="sort mt-2">
             Urutkan : <span id="sort-button">Terakhir</span>
         </div>
