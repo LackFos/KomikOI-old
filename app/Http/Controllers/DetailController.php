@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\TimeAgoHelpers;
+use App\Helpers\BookmarkHelpers;
 use App\Models\Comic;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class DetailController extends Controller
 {
-    public function __invoke($slug)
+    public function __invoke(Request $request, $slug)
     {
         $comic = Comic::select('id', 'title', 'slug', 'author', 'image', 'description', 'status_id', 'type_id')->where('slug', $slug)->firstOrFail();
         $genres = $comic->genres()->select('name', 'slug')->get();
         $type = $comic->type()->select('name', 'slug')->first();
         $status = $comic->status()->select('name', 'slug')->first();
         $chapters = $comic->chapters()->select('slug', 'number', 'created_at')->get()->sortByDesc('number');
-        $lastUpdate = isset($chapters[0]) ? $chapters[0]->created_at->format('d M Y') : null;
+
+        $lastUpdate = isset($chapters[0])
+            ? $chapters[0]->created_at->format('d M Y')
+            : null;
+
+        $bookmark = new BookmarkHelpers();
+        $bookmarked = $bookmark->findComic($comic->id);
 
         return view(
             "pages.detail",
@@ -25,7 +31,8 @@ class DetailController extends Controller
                 'type',
                 'status',
                 'lastUpdate',
-                'chapters'
+                'chapters',
+                'bookmarked'
             )
         )->with('metaTitle', 'Detail Page');
     }

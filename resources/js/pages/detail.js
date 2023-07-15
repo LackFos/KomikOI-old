@@ -1,20 +1,34 @@
 $(document).ready(function () {
    // More Button
-   $('#more-button').click(function() {
+   $('#more-button').click(() => {
       $('.detail-info').toggleClass('active');
    });
 
-   $('#sort-button').click(function(e){
-      const $sortType = $(e.target);
+   // Sort Button
+   $('#sort-button').click((e) => {
+      const $sortButton = $(e.target);
 
       $('.chapterbox-list').toggleClass('reverse');
-      if($sortType.text() == 'Terakhir') {
-         $sortType.text('Pertama');
-      } else {
-         $sortType.text('Terakhir');
-      }
+      $sortButton.text($sortButton.text() == 'Terakhir' ? 'Pertama' :  'Terakhir');
+   });
 
-   
+   // Bookmark
+   const $bookmark = $('.bookmark');
+   const comicId = $bookmark.data('comicId');
+   let isBookmarked = $bookmark.data('isBookmarked');
+
+   $bookmark.click(() => {
+      if(isBookmarked) {
+         $.post(`/bookmark/delete/${comicId}`, () => {
+            isBookmarked = 0;
+            $bookmark.removeClass('active');
+         });
+      } else {
+         $.post(`/bookmark/add/${comicId}`, () => {
+            isBookmarked = 1;
+            $bookmark.addClass('active');
+         });
+      }
    });
 
    // ChapterBox
@@ -22,8 +36,7 @@ $(document).ready(function () {
    const $chapterList = $('.chapterbox-list');
    const $chapterItem = $('.chapter-link');
 
-   // Input OnChange
-   $chapterInput.on('input', function(e) {
+   $chapterInput.on('input', (e) => {
       const chapterNumber = e.target.value;
       const $selectedChapter = findChapterElement(chapterNumber);
       
@@ -35,8 +48,7 @@ $(document).ready(function () {
       }
    });
 
-   // Input onEnter
-   $chapterInput.on('keydown', function(e) {
+   $chapterInput.on('keydown', (e) => {
       if (e.keyCode === 13) {
          const chapterNumber = e.target.value;
          const $selectedChapter = findChapterElement(chapterNumber);

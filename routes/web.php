@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\BookmarkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 Route::get('/detail/{slug}', DetailController::class);
+Route::post('/bookmark/add/{id}', [BookmarkController::class, 'create']);
+Route::post('/bookmark/delete/{id}', [BookmarkController::class, 'delete']);
