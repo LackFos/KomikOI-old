@@ -34,6 +34,6 @@ class DetailController extends Controller
                 'chapters',
                 'bookmarked'
             )
-        )->with('metaTitle', 'Detail Page');
+        )->with('metaTitle', 'Komik ' . $comic->title . ' Bahasa Indonesia - KomikOI');
     }
 }
