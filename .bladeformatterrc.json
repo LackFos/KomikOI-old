@@ -1,0 +1,5 @@
+{
+    "wrapAttributes": "force-expand-multiline",
+    "noMultipleEmptyLines": true,
+    "sortHtmlAttributes": "vuejs"
+}
