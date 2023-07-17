@@ -4,14 +4,15 @@
     width: 100%;
 
     &-top {
+        align-items: center;
+        display: flex;
         margin-bottom: 1rem;
         width: 100%;
-        display: flex;
     }
 
     &-bottom {
-        position: relative;
         min-height: 200px;
+        position: relative;
 
         & .swiper-slide {
             margin-right: 7px;
@@ -37,15 +38,15 @@
         }
 
         &-placeholder {
-            position: relative;
-            padding-top: 133%;
             background: $surface-gray;
+            padding-top: 133%;
+            position: relative;
 
             img {
+                height: 100%;
                 position: absolute;
                 top: 0;
                 width: 100%;
-                height: 100%;
             }
         }
     }

@@ -4,13 +4,9 @@
     width: 100%;
 
     &-atas {
-        display: flex;
         align-items: center;
+        display: flex;
         margin-bottom: 1.5rem;
-    }
-
-    &-topage {
-        margin-left: auto;
     }
 
     &-bawah {
@@ -29,24 +25,24 @@
     }
 
     &-poster {
+        background-color: $surface-gray;
+        height: 200px;
         position: relative;
         width: 150px;
-        height: 200px;
-        background-color: $surface-gray;
 
         &:hover ~ .detail .detail-title {
             color: $primary;
         }
 
         @media (max-width: 480px) {
-            width: 80px;
             height: 120px;
+            width: 80px;
         }
 
         img {
-            width: 100%;
             height: 100%;
             object-fit: cover;
+            width: 100%;
         }
     }
 
@@ -61,8 +57,8 @@
         }
 
         &-title {
-            margin-bottom: 8px;
             font-size: 16px;
+            margin-bottom: 8px;
 
             &:hover {
                 color: $primary;
@@ -70,6 +66,25 @@
 
             @media (max-width: 480px) {
                 margin-bottom: 4px;
+            }
+        }
+
+        .chapter-list {
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: auto;
+
+            .chapter {
+                border-bottom: 1px dashed #ddd;
+                padding: 10px 0;
+
+                @media (max-width: 480px) {
+                    padding: 8px 0;
+
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
             }
         }
 
@@ -85,24 +100,9 @@
                 }
             }
         }
+    }
 
-        .chapter-list {
-            margin-top: auto;
-            font-size: 13px;
-            font-weight: 600;
-
-            .chapter {
-                padding: 10px 0;
-                border-bottom: 1px dashed #ddd;
-
-                @media (max-width: 480px) {
-                    padding: 8px 0;
-
-                    &:nth-child(3) {
-                        display: none;
-                    }
-                }
-            }
-        }
+    &-topage {
+        margin-left: auto;
     }
 }
