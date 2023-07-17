@@ -2,37 +2,38 @@
 @import "__function";
 
 .button {
-    cursor: pointer;
-    padding: 0px 1rem;
     border-radius: 4px;
+    color: inherit;
+    cursor: pointer;
     font-weight: 500;
     line-height: 40px;
+    padding: 0px 1rem;
     text-align: center;
-    white-space: nowrap;
     transition: 0.1s ease-in;
-
-    &:hover {
-        color: inherit;
-    }
+    white-space: nowrap;
 
     &:active {
         opacity: 1;
         transform: scale(0.9);
     }
 
-    &-action {
-        padding: 0;
-        width: 40px;
-        height: 40px;
+    &:hover {
+        color: inherit;
     }
 
     &.disabled {
         cursor: default;
         pointer-events: none;
         transform: none;
-        color: hover($button-disabled);
+        color: white;
         background-color: $button-disabled;
         opacity: 0.7;
+    }
+
+    &-action {
+        height: 40px;
+        padding: 0;
+        width: 40px;
     }
 
     &.a {
@@ -59,6 +60,15 @@
         @include hover($button-c, "background-color");
     }
 
+    &.disabled {
+        background-color: $button-disabled;
+        color: hover($button-disabled);
+        cursor: default;
+        opacity: 0.7;
+        pointer-events: none;
+        transform: none;
+    }
+
     &.gray {
         background-color: $button-gray;
     }
@@ -68,8 +78,8 @@
     }
 
     &.primary {
-        color: $font-white;
         background-color: $primary;
+        color: $font-white;
     }
 
     &.primary:hover {
@@ -77,8 +87,8 @@
     }
 
     &.secondary {
-        color: $font-white;
         background-color: $secondary;
+        color: $font-white;
     }
 
     &.secondary:hover {

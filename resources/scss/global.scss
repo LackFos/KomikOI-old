@@ -1,15 +1,11 @@
 @import "__variables";
 
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
-body {
-    font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -22,12 +18,22 @@ a {
     }
 }
 
+body {
+    font-size: 14px;
+}
+
 li {
     list-style: none;
 }
 
 .disabled {
     opacity: 0.7;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .line {
@@ -56,17 +62,16 @@ li {
     }
 }
 
-// Container
 .container {
     margin: auto;
     max-width: 1360px;
 
     .section {
-        width: 100%;
-        display: flex;
         align-content: center;
+        display: flex;
         flex-wrap: wrap;
         margin-bottom: 3rem;
+        width: 100%;
 
         @media (max-width: 1400px) {
             padding-left: 1rem;
@@ -80,37 +85,35 @@ li {
     }
 }
 
-// Header
-.header {
-    background-color: $surface-black;
-
-    .container {
-        height: 60px;
-        display: flex;
-        align-items: center;
-
-        .section {
-            margin-bottom: 0;
-        }
-    }
-}
-
-// Footer
 .footer {
-    display: flex;
     align-items: center;
-    color: $font-white;
-    text-align: center;
     background-color: $surface-black;
+    color: $font-white;
+    display: flex;
+    text-align: center;
 
     .section {
-        margin-bottom: 1.5rem;
         display: flex;
         justify-content: center;
+        margin-bottom: 1.5rem;
     }
 
     &-link {
         line-height: 50px;
+    }
+}
+
+.header {
+    background-color: $surface-black;
+
+    .container {
+        align-items: center;
+        display: flex;
+        height: 60px;
+
+        .section {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -119,16 +122,16 @@ li {
     margin-left: auto;
 
     &-button {
-        margin: 0 4px;
+        align-items: center;
+        background-color: $surface-gray;
         border-radius: 50px !important;
         display: flex;
-        align-items: center;
         justify-content: center;
-        background-color: $surface-gray;
+        margin: 0 4px;
 
         &:hover {
-            color: white !important;
             background-color: $primary !important;
+            color: white !important;
         }
     }
 }
