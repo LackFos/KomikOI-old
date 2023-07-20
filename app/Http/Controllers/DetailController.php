@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Helpers\BookmarkHelpers;
 use App\Models\Comic;
-use Illuminate\Http\Request;
 
 class DetailController extends Controller
 {
-    public function __invoke(Request $request, $slug)
+    public function __invoke($slug)
     {
         $comic = Comic::select('id', 'title', 'slug', 'author', 'image', 'description', 'status_id', 'type_id')->where('slug', $slug)->firstOrFail();
         $genres = $comic->genres()->select('name', 'slug')->get();

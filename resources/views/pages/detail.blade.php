@@ -2,12 +2,12 @@
 
 @section('page')
     <main class="container no-select">
-        <section class="section pt-4 test">
+        <section class="section pt-4">
             <div class="detail-poster">
                 <div class="detail-poster-placeholder">
                     <img
                         src="{{ asset($comic->image) }}"
-                        alt=""
+                        alt="Komik {{ $comic->title }}"
                     >
                 </div>
             </div>
@@ -18,7 +18,7 @@
 
                     <div class="detail-button">
                         <a
-                            href="/baca/{{ optional($comic->firstChapter)->slug }}"
+                            href="/baca/{{ $comic->firstChapter?->slug }}"
                             @class([
                                 'button',
                                 'primary' => $comic->firstChapter,
