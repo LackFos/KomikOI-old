@@ -18,12 +18,16 @@ a {
     }
 }
 
-body {
+html {
     font-size: 14px;
 }
 
 li {
     list-style: none;
+}
+
+.hide {
+    display: none !important;
 }
 
 .disabled {
@@ -60,6 +64,34 @@ li {
         line-clamp: 3;
         overflow: hidden;
     }
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    display: block;
+    animation: rotate 1s linear infinite;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    border: 5px solid #ff4a22;
+    border-radius: 50%;
+    inset: 0px;
+    animation: prixClipFix 1.4s linear infinite;
+}
+
+.breadcrumb-list {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.breadcrumb:not(:first-of-type)::before {
+    content: "•";
+    margin: 0 0.5rem;
 }
 
 .container {
