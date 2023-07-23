@@ -66,13 +66,18 @@
                 >
             @endforeach
 
-            <div class="content-end">
+            <div
+                id="content-end"
+                class="content-end"
+            >
                 @if ($nextChapter)
+                    <div id="end-indicator"></div>
                     <span class="loader mb-2"></span>
                     <div class="loader-text">
                         Sedang memuat Chapter Selanjutnya, Jika proses ini lama silahkan tekan button dibawah
                     </div>
                     <a
+                        id="next-chapter"
                         href="/baca/{{ $nextChapter?->slug }}"
                         class="button secondary"
                     >Chapter Selanjutnya &gt;</a>
