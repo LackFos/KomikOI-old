@@ -1,9 +1,12 @@
 @use "global";
 @use "spacing";
-@use "button";
 @use "animation";
-@use "slideshow";
-@use "kontenx";
-@use "genremenu";
-@use "konteny";
-@use "detailpage";
+
+@use "components/button";
+@use "components/slideshow";
+@use "components/kontenx";
+@use "components/genremenu";
+@use "components/konteny";
+
+@use "pages/bacapage";
+@use "pages/detailpage";

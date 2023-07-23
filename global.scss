@@ -26,6 +26,10 @@ li {
     list-style: none;
 }
 
+.hide {
+    display: none !important;
+}
+
 .line {
     &-1 {
         display: -webkit-box;
