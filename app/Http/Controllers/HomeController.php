@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         $recommendedComic = $this->comicService->getRecommended();
-        $genres = Genre::getGenres();
+        $genres = Genre::all();
         $trendingComic = $this->comicService->getTrending();
         $latestComic = $this->comicService->getLatest();
 
