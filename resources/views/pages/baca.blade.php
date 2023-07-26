@@ -7,12 +7,12 @@
 
     <main class="baca container no-select">
         <article>
-            <h1 class="chapter-title">{{ $chapterTitle }}</h1>
+            <h1 class="chapter-title">{{ $heading }}</h1>
 
             <x-breadcrumb :subCategories="$breadcrumb" />
 
             <p class="chapter-description">
-                Baca komik {{ $chapterTitle }} Bahasa Indonesia secara gratis di KomikOI.
+                Baca komik {{ $heading }} Bahasa Indonesia secara gratis di KomikOI.
                 Temukan juga berbagai koleksi komik seru lainnya di KomikOI.
             </p>
 
@@ -42,7 +42,7 @@
             </div>
         </article>
 
-        <span class="chapter-banner hide">Berikut ini merupakan isi dari komik {{ $chapterTitle }} Bahasa Indonesia.</span>
+        <span class="chapter-banner hide">Berikut ini merupakan isi dari komik {{ $heading }} Bahasa Indonesia.</span>
 
         <section class="content">
             @foreach ($contents as $content)

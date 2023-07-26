@@ -1,21 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pages;
 
 use App\Models\Genre;
-use Illuminate\Http\Request;
 use App\Helpers\BreadcrumbHelpers;
+use App\Http\Controllers\Controller;
 
 class ArchiveController extends Controller
 {
-    private $breadcrumb;
-
-    public function __construct(BreadcrumbHelpers $breadcrumb)
-    {
-        $this->breadcrumb = $breadcrumb;
-    }
-
-    public function byGenre($slug)
+    public function byGenre(BreadcrumbHelpers $breadcrumb, $slug)
     {
         $genre = Genre::where('slug', $slug)->firstOrFail();
         $genres = Genre::all();
@@ -23,9 +16,9 @@ class ArchiveController extends Controller
         $comics = $genre->comics()->with(['genres', 'latestChapters'])->get(['comics.id', 'title', 'slug', 'image']);
 
         $heading = "Komik " . $genre->name;
-        $this->breadcrumb->add("Genre");
-        $this->breadcrumb->add($genre->name);
-        $breadcrumb = $this->breadcrumb->get();
+        $breadcrumb->add("Genre");
+        $breadcrumb->add($genre->name);
+        $breadcrumb = $breadcrumb->get();
 
         return view(
             "pages.archive",

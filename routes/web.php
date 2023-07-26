@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BacaController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DetailController;
-use App\Http\Controllers\ArchiveController;
-use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\Pages\BacaController;
+use App\Http\Controllers\Pages\HomeController;
+use App\Http\Controllers\Pages\DetailController;
+use App\Http\Controllers\Pages\ArchiveController;
+use App\Http\Controllers\Pages\BookmarkController;
 
 /*
 |--------------------------------------------------------------------------
