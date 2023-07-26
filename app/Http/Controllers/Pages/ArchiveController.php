@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Models\Genre;
 use App\Helpers\BreadcrumbHelpers;
+use App\Helpers\PaginationHelpers;
 use App\Http\Controllers\Controller;
 
 class ArchiveController extends Controller
@@ -13,7 +14,8 @@ class ArchiveController extends Controller
         $genre = Genre::where('slug', $slug)->firstOrFail();
         $genres = Genre::all();
 
-        $comics = $genre->comics()->with(['genres', 'latestChapters'])->get(['comics.id', 'title', 'slug', 'image']);
+        $comics = $genre->comics()->with(['genres', 'latestChapters'])->select(['comics.id', 'title', 'slug', 'image'])->paginate(16);
+        $paginator = new PaginationHelpers($comics);
 
         $heading = "Komik " . $genre->name;
         $breadcrumb->add("Genre");
@@ -26,6 +28,7 @@ class ArchiveController extends Controller
                 'breadcrumb',
                 'heading',
                 'comics',
+                'paginator',
                 'genres'
             )
         )->with('metaTitle', 'Komik ' . $genre->name . ' - KomikOI');

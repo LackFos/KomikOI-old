@@ -11,13 +11,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class KontenY extends Component
 {
     /**
-     * @param Collection $comics, List of comics will be shown.
+     * @param Collection|LengthAwarePaginator $comics, List of comics will be shown.
      * @param string $heading, Heading of GenreMenu <h2>.
      * @param string $superHeading, Heading of GenreMenu <h1>.
      * @param string $toPage, Link to archives page
      */
     public function __construct(
-        public Collection $comics,
+        public Collection|LengthAwarePaginator $comics,
         public string $heading = "",
         public string $superHeading = "",
         public string $toPage = ""

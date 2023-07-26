@@ -10,7 +10,7 @@
                 :comics="$comics"
             />
 
-            {{-- {{ $paginasi->links() }} --}}
+            {{ $paginator->links() }}
         </section>
 
         <section class="section genres">
