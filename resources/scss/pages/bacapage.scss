@@ -1,0 +1,77 @@
+@import "../__variables";
+
+.baca {
+    max-width: 800px;
+    min-height: 1vh;
+    color: $font-gray;
+    font-size: 1rem;
+
+    @media (max-width: 640px) {
+        font-size: 0.8125rem;
+    }
+
+    article {
+        padding: 1.5rem 0rem 2rem;
+        text-align: center;
+
+        @media (max-width: 800px) {
+            padding: 1.5rem 1rem 2rem;
+        }
+    }
+
+    .chapter-title {
+        margin-bottom: 1rem;
+    }
+
+    .breadcrumb-list {
+        border-radius: 8px;
+        justify-content: center;
+        background-color: $surface-dark-gray;
+    }
+
+    .chapter-description {
+        margin-bottom: 1.5rem;
+    }
+
+    .chapter-navigation {
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .button {
+            margin: 0 5px;
+
+            @media (max-width: 640px) {
+                margin: 5px 0px;
+                width: 100%;
+            }
+        }
+    }
+
+    .chapter-banner {
+        padding: 1rem 0.5rem;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        background: black;
+    }
+
+    .content-image {
+        width: 100%;
+        min-height: 400px;
+        display: block;
+    }
+
+    .content-end {
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .loader-text {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

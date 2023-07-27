@@ -16,4 +16,25 @@ class Chapter extends Model
     {
         return $this->belongsTo(Comic::class);
     }
+
+    public function content()
+    {
+        return $this->hasMany(chapterImage::class)->select("page_number", "url");
+    }
+
+    public function prev()
+    {
+        return $this->belongsTo(self::class, 'comic_id', 'comic_id')
+            ->select('slug')
+            ->where('number', '<', $this->number)
+            ->orderByDesc('number');
+    }
+
+    public function next()
+    {
+        return $this->belongsTo(self::class, 'comic_id', 'comic_id')
+            ->select('slug')
+            ->where('number', '>', $this->number)
+            ->orderBy('number');
+    }
 }

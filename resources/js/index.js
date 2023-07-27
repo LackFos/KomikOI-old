@@ -13,6 +13,9 @@ $.ajaxSetup({
    case 'home':
       await import('./pages/home');
       break;
+   case 'baca':
+      await import('./pages/baca');
+      break;
    case 'detail':
       await import('./pages/detail');
       break;
