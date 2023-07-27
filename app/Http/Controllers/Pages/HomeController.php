@@ -1,25 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pages;
 
 use App\Models\Genre;
 use App\Services\ComicService;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    private $comicService;
-
-    public function __construct(ComicService $comicService)
+    public function __invoke(ComicService $comicService)
     {
-        $this->comicService = $comicService;
-    }
-
-    public function __invoke()
-    {
-        $recommendedComic = $this->comicService->getRecommended();
-        $genres = Genre::getGenres();
-        $trendingComic = $this->comicService->getTrending();
-        $latestComic = $this->comicService->getLatest();
+        $recommendedComic = $comicService->getRecommended();
+        $genres = Genre::all();
+        $trendingComic = $comicService->getTrending();
+        $latestComic = $comicService->getLatest();
 
         return view(
             'pages.home',

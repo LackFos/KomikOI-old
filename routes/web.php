@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BacaController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DetailController;
-use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\Pages\BacaController;
+use App\Http\Controllers\Pages\HomeController;
+use App\Http\Controllers\Pages\DetailController;
+use App\Http\Controllers\Pages\ArchiveController;
+use App\Http\Controllers\Pages\BookmarkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,8 @@ use App\Http\Controllers\BookmarkController;
 Route::get('/', HomeController::class);
 Route::get('/baca/{slug}', BacaController::class)->where('slug', '.*');
 Route::get('/detail/{slug}', DetailController::class);
+Route::get('/genre/{slug}', [ArchiveController::class, 'byGenre']);
+Route::get('/tipe/{slug}', [ArchiveController::class, 'byType']);
+
 Route::post('/bookmark/add/{id}', [BookmarkController::class, 'create']);
 Route::post('/bookmark/delete/{id}', [BookmarkController::class, 'delete']);

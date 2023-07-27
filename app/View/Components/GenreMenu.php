@@ -12,13 +12,13 @@ class GenreMenu extends Component
 {
     /**
      * @param Collection|SupportCollection $genres, List of genres will be shown.
-     * @param bool $heading, Title of GenreMenu.
+     * @param string $heading, Title of GenreMenu.
      * @param bool $hasCategory, 
      * @param bool $hasMoreButton,
      */
     public function __construct(
         public Collection|SupportCollection $genres,
-        public bool $heading = false,
+        public string $heading = "",
         public bool $hasCategory = false,
         public bool $hasMoreButton = false
     ) {

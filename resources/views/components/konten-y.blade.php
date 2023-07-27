@@ -9,7 +9,10 @@
         @endif
 
         @if ($toPage)
-            <a href="/{{ $toPage }}" class="konteny-topage"> Semua ></a>
+            <a
+                href="/{{ $toPage }}"
+                class="konteny-topage"
+            > Semua ></a>
         @endif
     </div>
 
@@ -17,8 +20,14 @@
 
         @foreach ($comics as $comic)
             <div class="konteny-card">
-                <a href="/detail/{{ $comic->slug }}" class="konteny-poster">
-                    <img src={{ asset($comic->image) }} alt="Komik {{ $comic->title }}">
+                <a
+                    href="/detail/{{ $comic->slug }}"
+                    class="konteny-poster"
+                >
+                    <img
+                        src={{ asset($comic->image) }}
+                        alt="Komik {{ $comic->title }}"
+                    >
                 </a>
 
                 <div class="detail">
@@ -35,7 +44,7 @@
                     </ul>
 
                     <ul class="chapter-list">
-                        @foreach ($comic->chapters as $chapter)
+                        @foreach ($comic->latestChapters as $chapter)
                             <li class="chapter">
                                 <a href="/baca/{{ $chapter->slug }}">
                                     Chapter {{ $chapter->number }}

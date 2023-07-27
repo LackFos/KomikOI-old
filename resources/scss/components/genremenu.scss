@@ -1,16 +1,16 @@
 @import "../__variables";
 @import "../__function";
 
-.aktif {
+.active {
     .genre-menu {
         @media (max-width: 575px) {
             &:nth-of-type(n + 14) {
-                display: flex;
+                display: flex !important;
             }
         }
 
         &:nth-of-type(n + 24) {
-            display: flex;
+            display: flex !important;
         }
     }
 
