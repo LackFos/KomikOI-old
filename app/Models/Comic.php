@@ -38,7 +38,7 @@ class Comic extends Model
             ->groupBy('comic_id');
     }
 
-    public function latestChapter()
+    public function latestChapters()
     {
         return $this->hasMany(Chapter::class)
             ->select('comic_id', 'number', 'slug')

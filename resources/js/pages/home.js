@@ -6,6 +6,6 @@ $(document).ready(function () {
    new Swiper('#populer', config.populer);
 
    $('.genre-button-more').click(function(){
-      $('#genre-list').toggleClass('aktif');
+      $('#genre-list').toggleClass('active');
    });
 });

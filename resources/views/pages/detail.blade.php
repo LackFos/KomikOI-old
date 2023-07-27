@@ -2,7 +2,10 @@
 
 @section('page')
     <main class="container no-select">
-        <section class="section pt-4">
+
+        <x-breadcrumb :subCategories="$breadcrumb" />
+
+        <section class="section">
             <div class="detail-poster">
                 <div class="detail-poster-placeholder">
                     <img
@@ -25,7 +28,6 @@
                                 'disabled' => !$comic->firstChapter,
                             ])
                         >Baca Sekarang</a>
-
                         <div
                             @class([
                                 'bookmark button secondary button-action',
@@ -35,25 +37,23 @@
                             data-is-bookmarked="{{ $bookmarked }}"
                         ><i class="far fa-bookmark"></i></div>
                     </div>
-
-                    <x-genre-menu :genres="$genres" />
-
+                    <x-genre-menu :genres="$comic->genres" />
                     <p class="detail-description">{{ $comic->description }}</p>
                 </div>
 
                 <div class="detail-info-misc">
                     <x-detail-item
                         heading="Tipe"
-                        text="{{ $type->name }}"
-                        toPage="/tipe/{{ $type->slug }}"
+                        text="{{ $comic->type->name }}"
+                        toPage="/tipe/{{ $comic->type->slug }}"
                     />
                     <x-detail-item
                         heading="Status"
-                        text="{{ $status->name }}"
+                        text="{{ $comic->status->name }}"
                     />
                     <x-detail-item
                         heading="Author"
-                        text="{{ $author ?? '-' }}"
+                        text="{{ $comic->author ?? '-' }}"
                     />
                     <x-detail-item
                         heading="Update Terakhir"

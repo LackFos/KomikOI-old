@@ -7,34 +7,22 @@
 
     <main class="baca container no-select">
         <article>
-            <h1 class="chapter-title">
-                {{ $chapterTitle }}
-            </h1>
+            <h1 class="chapter-title">{{ $heading }}</h1>
 
-            <ul class="breadcrumb-list mb-4">
-                <li class="breadcrumb">
-                    <a href="/">Home</a>
-                </li>
-                <li class="breadcrumb">
-                    <a href="/detail/{{ $comic->slug }}">{{ $comic->title }}</a>
-                </li>
-                <li class="breadcrumb disabled">
-                    {{ $chapterTitle }}
-                </li>
-            </ul>
+            <x-breadcrumb :subCategories="$breadcrumb" />
 
             <p class="chapter-description">
-                Baca komik {{ $chapterTitle }} Bahasa Indonesia. Baca komik {{ $comic->title }} secara gratis di KomikOI.
-                Temukan berbagai koleksi komik seru lainnya di KomikOI.
+                Baca komik {{ $heading }} Bahasa Indonesia secara gratis di KomikOI.
+                Temukan juga berbagai koleksi komik seru lainnya di KomikOI.
             </p>
 
             <div class="chapter-navigation">
                 <a
-                    href="/baca/{{ $prevChapter?->slug }}"
+                    href="/baca/{{ $chapter->prev?->slug }}"
                     @class([
                         'button',
-                        'secondary' => $prevChapter,
-                        'disabled' => !$prevChapter,
+                        'secondary' => $chapter->prev,
+                        'disabled' => !$chapter->prev,
                     ])
                 >&lt; Chapter Sebelumnya</a>
 
@@ -44,18 +32,17 @@
                 >Daftar Chapter</a>
 
                 <a
-                    href="/baca/{{ $nextChapter?->slug }}"
+                    href="/baca/{{ $chapter->next?->slug }}"
                     @class([
                         'button',
-                        'secondary' => $nextChapter,
-                        'disabled' => !$nextChapter,
+                        'secondary' => $chapter->next,
+                        'disabled' => !$chapter->next,
                     ])
                 >Chapter Selanjutnya &gt;</a>
             </div>
         </article>
 
-        <span class="chapter-banner hide">Berikut ini merupakan isi dari komik {{ $comic->title }} Chapter
-            {{ $chapter->number }} Bahasa Indonesia.</span>
+        <span class="chapter-banner hide">Berikut ini merupakan isi dari komik {{ $heading }} Bahasa Indonesia.</span>
 
         <section class="content">
             @foreach ($contents as $content)
@@ -70,7 +57,7 @@
                 id="content-end"
                 class="content-end"
             >
-                @if ($nextChapter)
+                @if ($chapter->next)
                     <div id="end-indicator"></div>
                     <span class="loader mb-2"></span>
                     <div class="loader-text">
@@ -78,7 +65,7 @@
                     </div>
                     <a
                         id="next-chapter"
-                        href="/baca/{{ $nextChapter?->slug }}"
+                        href="/baca/{{ $chapter->next?->slug }}"
                         class="button secondary"
                     >Chapter Selanjutnya &gt;</a>
                 @else

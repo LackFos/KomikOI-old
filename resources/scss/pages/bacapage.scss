@@ -1,10 +1,10 @@
 @import "../__variables";
 
 .baca {
-    max-width: 800px;
-    min-height: 1vh;
     color: $font-gray;
     font-size: 1rem;
+    max-width: 800px;
+    min-height: 1vh;
 
     @media (max-width: 640px) {
         font-size: 0.8125rem;
@@ -19,14 +19,12 @@
         }
     }
 
-    .chapter-title {
-        margin-bottom: 1rem;
-    }
-
-    .breadcrumb-list {
-        border-radius: 8px;
-        justify-content: center;
-        background-color: $surface-dark-gray;
+    .chapter-banner {
+        align-items: center;
+        background: black;
+        display: flex;
+        min-height: 80px;
+        padding: 1rem 0.5rem;
     }
 
     .chapter-description {
@@ -40,6 +38,8 @@
         justify-content: center;
 
         .button {
+            justify-content: center;
+            display: flex;
             margin: 0 5px;
 
             @media (max-width: 640px) {
@@ -49,29 +49,31 @@
         }
     }
 
-    .chapter-banner {
-        padding: 1rem 0.5rem;
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-        background: black;
-    }
-
-    .content-image {
-        width: 100%;
-        min-height: 400px;
-        display: block;
+    .chapter-title {
+        margin-bottom: 1rem;
     }
 
     .content-end {
-        padding: 2rem 1rem;
-        display: flex;
         align-items: center;
+        display: flex;
         flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .content-image {
+        display: block;
+        min-height: 400px;
+        width: 100%;
     }
 
     .loader-text {
-        margin-top: 1rem;
         margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .breadcrumb-list {
+        background-color: $surface-dark-gray;
+        border-radius: 8px;
+        justify-content: center;
     }
 }

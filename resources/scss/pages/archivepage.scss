@@ -1,0 +1,71 @@
+.archive {
+    display: flex;
+    padding: 0;
+
+    @media (max-width: 1360px) {
+        flex-direction: column;
+    }
+
+    .breadcrumb-list {
+        @media (max-width: 1400px) {
+            padding: 1rem 0;
+        }
+
+        @media (max-width: 860px) {
+            margin-bottom: 0;
+        }
+    }
+
+    .section {
+        display: block;
+        padding-right: 3rem;
+        width: calc(100% - 410px);
+
+        @media (max-width: 1360px) {
+            padding-right: 0.5rem;
+            width: 100%;
+        }
+
+        &.genres {
+            align-items: baseline;
+            margin-top: 62px;
+            width: 410px;
+
+            @media (max-width: 1360px) {
+                margin-top: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    .konteny-card {
+        padding-right: 3rem;
+        width: 50%;
+
+        @media (max-width: 860px) {
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+        .button {
+            align-items: center;
+            border-radius: 8px;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+            margin: 4px;
+            width: 40px;
+
+            & .active {
+                background-color: var(--primary);
+                color: var(--font-white);
+            }
+        }
+    }
+}
