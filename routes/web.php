@@ -22,6 +22,7 @@ Route::get('/', HomeController::class);
 Route::get('/baca/{slug}', BacaController::class)->where('slug', '.*');
 Route::get('/detail/{slug}', DetailController::class);
 Route::get('/genre/{slug}', [ArchiveController::class, 'byGenre']);
+Route::get('/tipe/{slug}', [ArchiveController::class, 'byType']);
 
 Route::post('/bookmark/add/{id}', [BookmarkController::class, 'create']);
 Route::post('/bookmark/delete/{id}', [BookmarkController::class, 'delete']);
