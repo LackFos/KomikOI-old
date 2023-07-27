@@ -15,7 +15,7 @@
         </li>
     @endif
 
-    @if (isset($urls))
+    @if (count($urls) > 1)
         @foreach ($urls as $url)
             <li>
                 <a
